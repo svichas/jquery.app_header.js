@@ -17,6 +17,7 @@
 
                if ($(window).width() > options.maxWidth
                     && options.maxWidth != -1) {
+                    $this.css("transform", "translateY(0)");
                     return false;
                }
 
