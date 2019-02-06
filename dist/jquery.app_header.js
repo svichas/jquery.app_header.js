@@ -15,15 +15,16 @@
           // method to set transition to header
           function set_header_transition(event) {
 
-               if ($(window).width() > options.maxWidth
-                    && options.maxWidth != -1) {
+                // caclulate translateY
+                var currentScrollTop = $(window).scrollTop();
+
+                if (($(window).width() > options.maxWidth
+                    && options.maxWidth != -1)
+                    || currentScrollTop < 0) {
                     $this.css("transform", "translateY(0)");
                     return false;
-               }
+                }
 
-               // caclulate translateY
-               var currentScrollTop = $(window).scrollTop(),
-                    headerTop = $this.offset().top;
 
                translateY += scrollTop - currentScrollTop;
 
